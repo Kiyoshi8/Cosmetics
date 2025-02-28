@@ -1,0 +1,50 @@
+{
+    "ourProducts": [
+        {
+            "name": "Lip Glow",
+            "description": "Lip Glow",
+            "price": "$40.00",
+            "link":"product_info.html",
+            "src":"images/make-up3.jpg"
+        },
+        {
+            "name": "True Color",
+            "description": "True Color",
+            "price": "$50.00",
+            "link":"product_info.html",
+            "src":"images/make-up6.jpg"
+        },  
+        {
+            "name": "Foundation",
+            "description": "Foundation",
+            "price": "$30.00",
+            "link":"product_info.html",
+            "src":"images/make-up13.jpg"
+        },
+        {
+            "name": "Magic",
+            "description": "Magic",
+            "price": "$70.00",
+            "link":"product_info.html",
+            "src":"images/make-up8.jpg"
+        }                          
+    ],
+    "latestProducts": [
+        {
+            "link":"product_info.html",
+            "src":"images/make-up3.jpg"
+        },
+        {
+            "link":"product_info.html",
+            "src":"images/make-up3.jpg"
+        },
+        {
+            "link":"product_info.html",
+            "src":"images/make-up3.jpg"
+        },
+        {
+            "link":"product_info.html",
+            "src":"images/make-up3.jpg"
+        }        
+    ]
+}

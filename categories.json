@@ -1,0 +1,19 @@
+{
+    "categories": [
+        {
+            "alt": "Mirror",
+            "link":"product_info.html",
+            "src":"images/make-up4.jpg"
+        },
+        {
+            "alt": "Lipstick",
+            "link":"product_info.html",
+            "src":"images/make-up2.jpg"
+        },
+        {
+            "alt": "Perfume",
+            "link":"product_info.html",
+            "src":"images/make-up1.jpg"
+        }
+    ]
+}

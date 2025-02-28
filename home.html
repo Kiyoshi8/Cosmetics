@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Products Website Design</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<script>
+  var products = [];
+  async function getCategories() {
+    const response = await fetch("categories.json");
+    data = await response.json();
+    categories = data.categories;
+    categories.forEach(showCategory);
+    
+  }
+
+  async function getOurProducts() {
+    const response = await fetch("data.json");
+    data = await response.json();
+    ourProducts = data.ourProducts;
+    ourProducts.forEach(showOurProducts);
+    
+  }  
+  async function getData() {
+    const response = await fetch("data.json");
+    products = await response.json();
+    console.log(products);
+    node = document.getElementById('rowItems');
+    products.products.forEach(myProduct);
+    
+  }
+
+  function showCategory(category) {
+    categoryNode.insertAdjacentHTML('afterbegin', '<div class="column-3"><img src="' +  category.src + '" alt=" '+ category.alt +' "></div>');    
+  }
+  
+  function showOurProducts(product) {
+    var ourProductView = '<div class="column-4"><a href="' + product.link+' "><img src="';
+    ourProductView += product.src +'"></a><h4>' + product.name + '</h4><div class="rating">';
+    ourProductView += '<i class="bx bxs-star"></i>';
+    ourProductView += '<i class="bx bxs-star"></i>';
+    ourProductView += '<i class="bx bxs-star"></i>';
+    ourProductView += '<i class="bx bxs-star"></i>';
+    ourProductView += '<i class="bx bxs-starr-half"></i>';
+    ourProductView += '</div>';
+    ourProductView += '<p>' + product.price+'</p>';
+    ourProductView += '</div>';
+    ourProductNode.insertAdjacentHTML('afterbegin', ourProductView);    
+  }  
+
+
+  function myProduct(product)
+  {
+    console.log(product);
+    node.insertAdjacentHTML('afterend', '<div class="column-3"><img src="images/make-up1.jpg" alt="">Hellooooo</div>');
+  }
+
+</script>
+<body>
+
+  <div class="header">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="home.html"><img src="images/logo-transparent-png.png" width="190px"></a>
+      </div>
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">Account</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html"><img src="images/cart-solid-24.png" width="30px" height="30px"></a>
+      <img src="images/menu-regular-24.png" class="menu-icon" onclick="menutoggle()">
+    </div>
+    <div class="row">
+      <div class="column-2">
+        <h1>Lorem ipsum dolor<br>sit amet</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <a href="products.html"class="btn">Explore Now &#10233;</a>
+      </div>
+      <div class="column-1">
+        <img src="images/Untitled_design-removebg-preview.png">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------Categories--------------->
+  <div class="categories">
+    <div class="small-container">
+      <div class="row" id = "categories">
+    </div>
+  </div>
+
+<!--=------------Products---------------->
+    <div class="small-container">
+      <h2 class="title">Our Products</h2>
+      <div class="row" id = "ourProducts">
+      </div>
+      
+<!----------Late Product-------------->
+      <h2 class="title">Latest Products</h2>
+      <div class="row">
+        <div class="column-4">
+          <a href="product_info.html"><img src="images/make-up5.jpg"></a>
+          <h4>Charlotte Tibury</h4>
+          <div class="rating">
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star-half' ></i>
+          </div>
+          <p>$40.00</p>
+        </div>
+        <div class="column-4">
+          <a href="product_info.html"><img src="images/make-up9.jpg"></a>
+          <h4>Elf</h4>
+          <div class="rating">
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bx-star' ></i>
+          </div>
+          <p>$50.00</p>
+        </div>
+        <div class="column-4">
+          <a href="product_info.html"><img src="images/make-up10.jpg"></a>
+          <h4>Venus</h4>
+          <div class="rating">
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star-half' ></i>
+            <i class='bx bx-star' ></i>
+          </div>
+          <p>$30.00</p>
+        </div>
+        <div class="column-4">
+          <a href="product_info.html"><img src="images/make-up8.jpg"></a>
+          <h4>Magic</h4>
+          <div class="rating">
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bxs-star'></i>
+            <i class='bx bx-star' ></i>
+          </div>
+          <p>$70.00</p>
+        </div>
+        <div class="row">
+          <div class="column-4">
+            <a href="product_info.html"><img src="images/make-up3.jpg"></a>
+            <h4>Lip Glow</h4>
+            <div class="rating">
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star-half' ></i>
+            </div>
+            <p>$40.00</p>
+          </div>
+          <div class="column-4">
+            <a href="product_info.html"><img src="images/make-up6.jpg"></a>
+            <h4>True Color</h4>
+            <div class="rating">
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bx-star' ></i>
+            </div>
+            <p>$50.00</p>
+          </div>
+          <div class="column-4">
+            <a href="product_info.html"><img src="images/make-up11.jpg"></a>
+            <h4>Ultra Matte</h4>
+            <div class="rating">
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star-half' ></i>
+              <i class='bx bx-star' ></i>
+            </div>
+            <p>$30.00</p>
+          </div>
+          <div class="column-4">
+            <a href="product_info.html"><img src="images/make-up8.jpg"></a>
+            <h4>Magic</h4>
+            <div class="rating">
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bx-star' ></i>
+            </div>
+            <p>$70.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+<!----offer----->
+    <div class="offer">
+      <div class="small-container">
+        <div class="row">
+          <div class="column-2">
+            <img src="images/1iul_el_-removebg-preview.png" class="offer-img">
+          </div>
+          <div class="column-2">
+            <p>Lorem ipsum dolor sit amet</p>
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="products.html"class="btn">Explore Now &#10233;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-----testimonial-->
+    <div class="testimonial">
+      <div class="small-container">
+        <div class="row">
+          <div class="column-3">
+            <div class="quotes">
+              <i class='bx bxs-quote-left'></i>             
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="rating">
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bx-star' ></i>
+            </div>
+            <img src="images/user1.png">
+            <h3>Lorem ipsum</h3>
+          </div>
+
+          <div class="column-3">
+            <div class="quotes">
+              <i class='bx bxs-quote-left'></i>             
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="rating">
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bx-star' ></i>
+            </div>
+            <img src="images/user2.png">
+            <h3>Lorem ipsum</h3>
+          </div>
+
+          <div class="column-3">
+            <div class="quotes">
+              <i class='bx bxs-quote-left'></i>             
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="rating">
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bxs-star'></i>
+              <i class='bx bx-star' ></i>
+            </div>
+            <img src="images/user3.png">
+            <h3>Lorem ipsum</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <!--- brands---->
+  <div class="brands">
+    <div class="small-container">
+      <div class="row">
+        <div class="column-5">
+          <img src="images/Logo.webp">
+        </div>
+        <div class="column-5">
+          <img src="images/Logo2.webp">
+        </div>
+        <div class="column-5">
+          <img src="images/download__2_-removebg-preview.png">
+        </div>
+        <div class="column-5">
+          <img src="images/download__1_-removebg-preview.png">
+        </div>
+        <div class="column-5">
+          <img src="images/logo-transparent-png.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--------footer----->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-column-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and IOS mobile phone.</p>
+          <div class="app-logo">
+            <img src="images/png-clipart-app-store-iphone-apple-mobile-app-iphone-electronics-text-removebg-preview (1).png">
+            <img src="images/png-transparent-android-google-play-app-store-google-play-text-computer-logo-removebg-preview (1).png">
+          </div>
+
+        </div>
+        <div class="footer-column-2">
+          <a href="home.html"><img src="images/logo-transparent-png.png"></a>
+          <!--<h3>Download Our App</h3>-->
+          <p>Download App for Android and IOS mobile phone.</p>
+        </div>
+        <div class="footer-column-3">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Return Policy</li>
+            <li>Join Affiliate</li>
+          </ul>
+        </div>
+        <div class="footer-column-4">
+          <h3>Follow us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>YouTube</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">Copyright @ 2025 - Beauty Products</p>
+    </div>
+  </div>
+<!-----toggle menu---->
+  <script>
+    var MenuItems = document.getElementById("MenuItems");
+    
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle(){
+      if(MenuItems.style.maxHeight == "0px")
+        {
+          MenuItems.style.maxHeight = "200px";
+        }
+      else
+        {
+          MenuItems.style.maxHeight = "0px";
+        }
+    }
+  </script>
+</body>
+<script type="text/javascript">
+  // node = document.getElementById('rowItems');
+  categoryNode = document.getElementById('categories');
+  ourProductNode = document.getElementById('ourProducts');
+  // getData();
+  getCategories();
+  getOurProducts();
+</script>
+</html>
